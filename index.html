@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portfolio Website | Aditya Kumar Singh</title>
+
+    <!-- Boxicons CSS for Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="book">
+            <!-- Profile Page -->
+            <div class="book-page page-left">
+                <div class="profile-page">
+                    <img src="profile.jpeg" alt="Profile Picture">
+                    <h1>Aditya Kumar Singh</h1>
+                    <h3>Web & Android Developer</h3>
+                    <div class="contact-info">
+                        <p><i class='bx bxs-map'></i> Patna, India 800020</p>
+                        <p><i class='bx bxs-phone'></i> <a href="tel:+919122890584">+91 9122890584</a></p>
+                        <p><i class='bx bxs-envelope'></i> <a href="mailto:singhadityakumar1911@gmail.com">singhadityakumar1911@gmail.com</a></p>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://www.linkedin.com/in/aditya-kumar-singh-9980a51ba/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/MrAdi149" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                    <h2>Summary</h2>
+                    <p>
+                        B.Tech graduate from KIIT University with a strong foundation in data structures and algorithms using C++. Hands-on experience in Android Development, successfully developed real-time, data-driven applications including chatbots and a video-sharing app similar to Instagram Reels.
+                    </p>
+                    <p>
+                        Completed an internship at BSNL, gaining practical experience in Cybersecurity and Networking. Proficient in SQL, holding an intermediate certification from Hackerrank. Achieved 5-Star Coder status on Hackerrank and Level 7 on CodeStudio. Skilled in C++, SQL, Python, Java, and Android Studio. Strong problem-solving and analytical skills. Excellent teamwork and communication abilities. Seeking opportunities to apply knowledge and skills to contribute to innovative projects.
+                    </p>
+                    <div class="btn-box">
+                        <a href="https://drive.google.com/uc?export=download&id=18rxilTcbvP7t9vAHJuXwlmd1I8CwjgFS" class="btn">Download CV</a>
+                        <a href="#" class="btn contact-me">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Page -->
+            <div class="book-page page-right">
+                <div class="education-page">
+                    <h2><i class='bx bxs-graduation'></i> Education</h2>
+                    <h3>KIIT University</h3>
+                    <p>B.Tech in Information Technology</p>
+                    <p><strong>CGPA:</strong> 8.67</p>
+                    <p><strong>Research Paper:</strong> Explainable Intelligence Enabled Smart Healthcare for Rural Communities</p>
+                    <p><a href="https://ieeexplore.ieee.org/document/10158477" target="_blank">View Paper</a></p>
+                </div>
+            </div>
+
+            <!-- Skills Page -->
+            <div class="book-page page-left">
+                <div class="skills-page">
+                    <h2><i class='bx bxs-wrench'></i> Skills</h2>
+                    <ul>
+                        <li>C++, Data Structures, Algorithms</li>
+                        <li>Android Development (Kotlin)</li>
+                        <li>SQL, Python, Java, JavaScript</li>
+                        <li>Flask, Android Studio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects Page -->
+            <div class="book-page page-right">
+                <div class="projects-page">
+                    <h2><i class='bx bxs-folder-open'></i> Projects</h2>
+                    <ul>
+                        <li><strong>Bhagavad Gita App:</strong> Developed an open-source Android app providing chapters and verses (with translations) of the Bhagavad Gita. Implemented audio support and commentary for verses in both Hindi and English. Supported multiple languages (Hindi, English) and offline functionality.</li>
+                        <li><strong>Zest App:</strong> Designed and developed a video-sharing app allowing users to upload videos from their gallery. Implemented swipe-right functionality for smooth video transitions and automatic video playback. Added login options via Gmail, Twitter, and phone number authentication.</li>
+                        <li><strong>LibUsb Camera App:</strong> Created a flexible UVC camera engine (AUSBC3.0) for Android, supporting multiple UVC cameras without system permissions.</li>
+                        <li><strong>Profanity Detector:</strong> Developed a profanity detection system using Flask and Python for text analysis. Integrated the backend with a Chrome extension for real-time text filtering.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Page -->
+            <div class="book-page page-left">
+                <div class="experience-page">
+                    <h2><i class='bx bxs-briefcase'></i> Experience</h2>
+                    <h3>Android Developer at V.Vendi Global</h3>
+                    <p><i class='bx bxs-calendar'></i> 05/2024 to 10/2024 | Bengaluru, India</p>
+                    <ul>
+                        <li>Developed a project assisting blind users by adding features like object detection, scene recognition, saving notes from detected text, barcode detection, currency detection, and video recording.</li>
+                        <li>Used Room Database for tasks like face recognition.</li>
+                        <li>Implemented navigation using the Google Maps API and text recognition using ML Kit.</li>
+                        <li>Worked with TensorFlow models and YOLO model converted to TFLite for object detection.</li>
+                        <li>Enabled features to work with both the phone camera and USB camera, controllable via voice commands.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button class="btn next-page">Next Page</button>
+        <button class="btn prev-page">Previous Page</button>
+    </div>
+
+   <!-- Contact Form Modal -->
+   <div class="contact-form-wrapper" id="contactForm">
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form id="contactMeForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="from_name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="reply_to" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <button class="btn close-form">Close</button>
+    </div>
+   </div>
+
+
+    <!-- JavaScript -->
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script src="script.js"></script> <!-- Keep script.js for event listeners and interactions -->
+</body>
+</html>

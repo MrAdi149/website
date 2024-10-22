@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #020024, #090979, #00d4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Wrapper */
+.wrapper {
+    position: relative;
+    width: 70rem;
+    height: 50rem;
+    perspective: 2000px;
+    transform: rotateX(10deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.book-page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid #00d4ff;
+    transition: transform 1s ease-in-out;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Positioning Pages */
+.page-left {
+    left: 0;
+    transform-origin: left;
+}
+
+.page-right {
+    left: 50%;
+    transform-origin: right;
+}
+
+/* Profile Page */
+.profile-page {
+    text-align: center;
+}
+
+.profile-page img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 0.3rem solid #00d4ff;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile-page img:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.profile-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile-page h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.profile-page .contact-info p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.profile-page .contact-info p i {
+    color: #00d4ff;
+    margin-right: 0.5rem;
+}
+
+.profile-page .contact-info a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.profile-page .contact-info a:hover {
+    color: #00d4ff;
+}
+
+.profile-page .social-media {
+    margin-bottom: 1rem;
+}
+
+.profile-page .social-media a {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.profile-page .social-media a:hover {
+    color: #333;
+}
+
+/* Button Styles */
+.btn-box {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    background: #00d4ff;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0096ff;
+    transform: translateY(-3px);
+}
+
+/* Skills, Projects, and Experience Pages */
+h2 {
+    font-size: 2rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    margin: 1rem 0;
+    padding-left: 0;
+}
+
+li {
+    background: rgba(0, 0, 255, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+li:hover {
+    background: rgba(0, 0, 255, 0.3);
+}
+
+/* Navigation Buttons */
+.next-page, .prev-page {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background: #00d4ff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2rem;
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.next-page {
+    right: 20px;
+}
+
+.prev-page {
+    left: 20px;
+}
+
+.next-page:hover, .prev-page:hover {
+    background: #0096ff;
+    transform: translateY(-5px);
+}
+
+/* Scrollbar */
+.book-page::-webkit-scrollbar {
+    width: 10px;
+}
+
+.book-page::-webkit-scrollbar-thumb {
+    background: #00d4ff;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.book:hover {
+    transform: rotateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        height: auto;
+    }
+
+    .book-page {
+        width: 100%;
+        left: 0;
+        transform-origin: left;
+    }
+
+    .next-page, .prev-page {
+        bottom: 10px;
+    }
+}

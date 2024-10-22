@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #081b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Variables */
+:root {
+    --bg-color: #081b29;
+    --main-color: #00abf0;
+    --text-color: #333;
+    --second-text-color: #555;
+    --white-color: #fff;
+    --cover-color: linear-gradient(45deg, #00abf0, #006e9a);
+    --pages-color: linear-gradient(90deg, #fff, #ddd);
+    --border: 0.125rem solid #00abf0;
+    --box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+/* Wrapper */
+.wrapper {
+    position: relative;
+    width: 66rem;
+    height: 45rem;
+    perspective: 2000px;
+}
+
+/* Video Background Styles */
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* Book Styles */
+.book {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.book-page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: var(--pages-color);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.5, 1), box-shadow 0.6s ease-in-out;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.page-left {
+    left: 0;
+    transform-origin: left;
+}
+
+.page-right {
+    left: 50%;
+    transform-origin: right;
+}
+
+/* Page flip effects */
+.book-page.flipping-left {
+    transform: rotateY(-180deg);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.book-page.flipping-right {
+    transform: rotateY(180deg);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects */
+.book-page:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure all content fits within each page */
+.book-page > div {
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+/* Scrollbar Styles */
+.profile-page::-webkit-scrollbar,
+.experience-page::-webkit-scrollbar,
+.projects-page::-webkit-scrollbar,
+.skills-page::-webkit-scrollbar,
+.education-page::-webkit-scrollbar {
+    width: 8px;
+}
+
+.profile-page::-webkit-scrollbar-thumb,
+.experience-page::-webkit-scrollbar-thumb,
+.projects-page::-webkit-scrollbar-thumb,
+.skills-page::-webkit-scrollbar-thumb,
+.education-page::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 4px;
+}
+
+/* Profile Page Styles */
+.profile-page {
+    text-align: center;
+}
+
+.profile-page img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.25rem solid var(--main-color);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.profile-page img:hover {
+    transform: scale(1.05);
+}
+
+.profile-page h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-page h3 {
+    font-size: 1.2rem;
+    color: var(--second-text-color);
+    margin-bottom: 1rem;
+}
+
+.profile-page .contact-info p {
+    font-size: 1rem;
+    color: var(--second-text-color);
+    margin-bottom: 0.5rem;
+}
+
+.profile-page .contact-info p i {
+    color: var(--main-color);
+    margin-right: 0.5rem;
+}
+
+.profile-page .contact-info a {
+    color: var(--second-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.profile-page .contact-info a:hover {
+    color: var(--main-color);
+}
+
+.profile-page .social-media {
+    margin-bottom: 1rem;
+}
+
+.profile-page .social-media a {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.profile-page .social-media a:hover {
+    color: var(--text-color);
+}
+
+/* Button Styles */
+.btn-box {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--text-color);
+    transform: translateY(-3px);
+}
+
+/* Contact Form Modal */
+.contact-form-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.close-form {
+    margin-top: 1rem;
+    background: #f44336;
+    color: white;
+}
+
+/* Navigation Buttons */
+.next-page, .prev-page {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: var(--white-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.next-page {
+    right: 20px;
+}
+
+.prev-page {
+    left: 20px;
+}
+
+.next-page:hover, .prev-page:hover {
+    background: var(--text-color);
+    transform: translateY(-3px);
+}
+
+/* Content Headings */
+h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--main-color);
+    display: flex;
+    align-items: center;
+}
+
+h2 i {
+    margin-right: 0.5rem;
+    color: var(--main-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+p, li {
+    font-size: 1rem;
+    color: var(--second-text-color);
+    line-height: 1.6;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+a {
+    color: var(--main-color);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+/* Experience Page */
+.experience-page ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+.experience-page ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Page */
+.projects-page ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.projects-page ul li {
+    margin-bottom: 1rem;
+}
+
+.projects-page ul li strong {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.projects-page ul li:before {
+    content: '•';
+    color: var(--main-color);
+    margin-right: 0.5rem;
+}
+
+/* Skills Page */
+.skills-page ul {
+    list-style: none;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-page ul li {
+    background: var(--main-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Education Page */
+.education-page p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        height: auto;
+    }
+
+    .book-page {
+        width: 100%;
+        left: 0;
+        transform-origin: left;
+    }
+
+    .next-page, .prev-page {
+        bottom: 10px;
+    }
+}
+
+/* Additional Styles for Form Fields */
+.field {
+    margin-bottom: 10px;
+}
+
+.field label {
+    display: block;
+    font-size: 12px;
+    color: #777;
+}
+
+.field input {
+    display: block;
+    min-width: 250px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    display: block;
+    padding: 6px 30px;
+    font-size: 14px;
+    background-color: #4460AA;
+    color: #fff;
+    border: none;
+}
