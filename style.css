@@ -427,3 +427,12 @@ input[type="submit"] {
     color: #fff;
     border: none;
 }
+
+/* Debugging Styles for Forced Visibility */
+.wrapper, .book, .book-page, .profile-page, .education-page, .skills-page, .projects-page, .experience-page {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: auto !important;
+}
+
