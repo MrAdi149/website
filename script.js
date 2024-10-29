@@ -49,3 +49,29 @@ prevButton.addEventListener('click', showPrevPage);
 
 // Initialize the button states at the beginning
 updateButtons();
+
+// Add swipe functionality for mobile devices
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(event) {
+    touchStartX = event.changedTouches[0].screenX;
+}
+
+function handleTouchEnd(event) {
+    touchEndX = event.changedTouches[0].screenX;
+    handleSwipe();
+}
+
+function handleSwipe() {
+    if (touchEndX < touchStartX - 50) {
+        showNextPage(); // Swipe left to go to the next page
+    }
+    if (touchEndX > touchStartX + 50) {
+        showPrevPage(); // Swipe right to go to the previous page
+    }
+}
+
+// Add touch event listeners to the wrapper
+document.querySelector('.wrapper').addEventListener('touchstart', handleTouchStart);
+document.querySelector('.wrapper').addEventListener('touchend', handleTouchEnd);

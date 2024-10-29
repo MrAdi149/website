@@ -35,6 +35,8 @@ body {
     width: 66rem;
     height: 45rem;
     perspective: 2000px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Video Background Styles */
@@ -261,6 +263,51 @@ body {
     margin-top: 1rem;
     background: #f44336;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+        height: auto;
+    }
+
+    .book-page {
+        width: 100%;
+        left: 0;
+        transform-origin: left;
+    }
+
+    .book-page > div {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .next-page, .prev-page {
+        bottom: 10px;
+        padding: 8px 15px;
+    }
+
+    .profile-page img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p, li {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Navigation Buttons */
